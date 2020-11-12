@@ -81,7 +81,7 @@ func (p *Proxy) Start() {
 	}
 
 	//display both ends
-	p.Log.Info("Opened %s >>> %s", p.laddr.String(), p.raddr.String())
+	//p.Log.Info("Opened %s >>> %s", p.laddr.String(), p.raddr.String())
 
 	//bidirectional copy
 	go p.pipe(p.lconn, p.rconn)
@@ -89,7 +89,7 @@ func (p *Proxy) Start() {
 
 	//wait for close...
 	<-p.errsig
-	p.Log.Info("Closed (%d bytes sent, %d bytes recieved)", p.sentBytes, p.receivedBytes)
+	//p.Log.Info("Closed (%d bytes sent, %d bytes recieved)", p.sentBytes, p.receivedBytes)
 }
 
 func (p *Proxy) err(s string, err error) {
